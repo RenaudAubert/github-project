@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 import { InputGroup, InputGroupAddon, Button } from 'reactstrap';
 import { fetchRepo } from '../redux/actions';
 
-const SearchBar = ({ dispatch }) => {
+const SearchBar = ({ dispatch, history}) => {
   let input;
 
   return (
@@ -13,6 +14,7 @@ const SearchBar = ({ dispatch }) => {
         return
       }
       dispatch(fetchRepo(input.value));
+      history.push('/');
     }}>
       <InputGroup>
         <input ref={node => input = node} />
@@ -25,5 +27,6 @@ const SearchBar = ({ dispatch }) => {
     </form>
   );
 }
+const SearchBarWithRouter = withRouter(SearchBar);
 
-export default connect()(SearchBar);
+export default connect()(SearchBarWithRouter);
