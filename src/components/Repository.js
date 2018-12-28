@@ -17,7 +17,7 @@ const Repository = (props) => {
         <Col>{fullname && "Fullname: " + fullname}</Col>
       </Row>
       <Row>
-        <Col>Watcher: {watchers}</Col>
+        <Col>Watchers: {watchers}</Col>
         <Col>Language: {language}</Col>
         <Col xs="1">
           <Link to={"/" + id} >

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Repository from './Repository';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import Repository from './Repository';
 
 const RepoList = (props) => {
   const { repositories } = props;

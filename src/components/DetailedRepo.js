@@ -1,18 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
 
 const DetailedRepo = (props) => {
-  const { name, fullname, description, avatar } = props.repository;
+  const {
+    name,
+    fullname,
+    description,
+    avatar,
+    watchers,
+    language
+  } = props.repository;
+
+  const back = e => {
+    e.stopPropagation();
+    props.history.goBack();
+  };
 
   return (
-    <Card>
-      <CardImg top src={avatar + "&s=60"} alt="github-avatar" />
-      <CardBody>
-        <CardTitle>{fullname || name}</CardTitle>
-        <CardText>{description || "N/A"}</CardText>
-      </CardBody>
-    </Card>
+    <div>
+      <Button onClick={back}>
+        <i className="fas fa-arrow-circle-left"></i>
+      </Button>
+      <div className="border mt-4">
+        <Row>
+          <Col>
+            <p className="font-weight-bold">{name}</p>
+          </Col>
+          <Col>{fullname && "Fullname: " + fullname}</Col>
+        </Row>
+        <Row>
+          <Col>
+            <img src={`${avatar}&s=48`} alt="Github-Avatar" className="img-thumbnail w-25" />
+          </Col>
+          <Col>
+            <p>Watchers: {watchers}</p>
+            {description || "Description N/A"}
+          </Col>
+        </Row>
+      </div>
+    </div>
   );
 };
 
