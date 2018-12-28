@@ -33,8 +33,8 @@ const DetailedRepo = (props) => {
             <img src={`${avatar}&s=48`} alt="Github-Avatar" className="img-thumbnail w-25" />
           </Col>
           <Col>
-            <p>Watchers: {watchers}</p>
             {description || "Description N/A"}
+            <p>Watchers: {watchers}</p>
           </Col>
         </Row>
       </div>
