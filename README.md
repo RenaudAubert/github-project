@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Once the project is downloaded (zip file or `git clone https://github.com/RenaudAubert/github-project.git`) :
 
-`cd github-project
+`cd github-project  
 npm install`
 
 Then you can run of the following scripts.
