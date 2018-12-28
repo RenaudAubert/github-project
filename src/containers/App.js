@@ -8,8 +8,10 @@ import { fetchRepo } from '../redux/actions';
 class App extends Component {
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchRepo("RenaudAubert"));
+    const { dispatch, repositories } = this.props;
+    if (repositories.length === 0) {
+      dispatch(fetchRepo("RenaudAubert"));
+    }
   }
 
   render() {
