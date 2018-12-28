@@ -10,12 +10,14 @@ import Header from './Header';
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-      <Container>
+      <div>
         <Header />
-        <br />
-        <Route exact path="/" component={App} />
-        <Route path="/:id" component={GetRepo} />
-      </Container>
+        <Container>
+          <br />
+          <Route exact path="/" component={App} />
+          <Route path="/:id" component={GetRepo} />
+        </Container>
+      </div>
     </Router>
   </Provider>
 );

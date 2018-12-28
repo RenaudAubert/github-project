@@ -8,8 +8,7 @@ const DetailedRepo = (props) => {
     fullname,
     description,
     avatar,
-    watchers,
-    language
+    watchers
   } = props.repository;
 
   const back = e => {
