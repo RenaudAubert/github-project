@@ -3,7 +3,6 @@ import DetailedRepo from '../components/DetailedRepo';
 
 const findRepoById = (repositories, id) => {
   const repo = repositories.find(repo => repo.id === id);
-  console.log("id: ", id, " | repo: ", repo);
   return repo || {};
 };
 
